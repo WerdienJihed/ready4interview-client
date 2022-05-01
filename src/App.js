@@ -1,5 +1,6 @@
 import Navigation from "./components/Navigation";
-import Settings from "./pages/Settings";
+import SettingsPage from "./pages/SettingsPage";
+import QuizzesPage from "./pages/QuizzesPage";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       <Navigation />
       <Routes>
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/quiz" element={<QuizzesPage />} />
       </Routes>
     </div>
   );
