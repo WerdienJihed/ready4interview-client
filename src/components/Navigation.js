@@ -7,18 +7,10 @@ const Navigation = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand>Ready For Interview</Navbar.Brand>
-        <Nav>
-          <LinkContainer to="/settings">
-            <Nav.Link>Settings</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/quiz">
-            <Nav.Link>Quiz</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/result">
-            <Nav.Link>Result</Nav.Link>
-          </LinkContainer>
-        </Nav>
+        <LinkContainer to="/">
+          <Navbar.Brand>Ready For Interview</Navbar.Brand>
+        </LinkContainer>
+        <Nav></Nav>
       </Container>
     </Navbar>
   );
