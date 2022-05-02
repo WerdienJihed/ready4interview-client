@@ -27,7 +27,9 @@ const DisplayQuizResult = () => {
   return (
     <Container className="mt-5">
       <div className="text-center">
-        <h2>Correct Answers : {numberOfCorrectAnswers}/20</h2>
+        <h2>
+          Correct Answers : {numberOfCorrectAnswers}/{quizzes.length}
+        </h2>
         <h2>Your score : {score}%</h2>
         <Button
           variant="outline-success"

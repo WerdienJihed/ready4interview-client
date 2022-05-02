@@ -13,23 +13,21 @@ const QuizzesWrapper = ({ quizzes, difficulty, topic }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (quizzes.length > 0) {
-      setQuiz(quizzes[0]);
-      setCurrentIndex(currentIndex + 1);
-    }
-  }, [quizzes]);
+    setQuiz(quizzes[currentIndex]);
+  }, [quizzes, currentIndex]);
 
   const handleChangeQuiz = (quiz, userAnswer) => {
-    setCurrentIndex(currentIndex + 1);
+    let prevQuiz = { ...quiz, userAnswer };
+    dispatch(add(prevQuiz));
 
-    if (currentIndex < quizzes.length) {
-      let prevQuiz = { ...quiz, userAnswer };
-      dispatch(add(prevQuiz));
-      setQuiz(quizzes[currentIndex]);
-    } else {
+    if (currentIndex === quizzes.length - 1) {
       navigate("/result");
+    } else {
+      setCurrentIndex(currentIndex + 1);
+      setQuiz(quizzes[currentIndex]);
     }
   };
+
   return (
     <div>
       <Alert variant="success">
@@ -40,7 +38,7 @@ const QuizzesWrapper = ({ quizzes, difficulty, topic }) => {
         <h6>Topic: {topic}</h6>
         <hr />
         <h6>
-          Question number: {currentIndex} /{quizzes.length}
+          Question number: {currentIndex + 1} /{quizzes.length}
         </h6>
       </Alert>
       {quiz && <QuizBox quiz={quiz} handleChangeQuiz={handleChangeQuiz} />}
