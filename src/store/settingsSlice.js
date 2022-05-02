@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: {},
+  value: {
+    topic: "javascript",
+    difficulty: "easy",
+  },
 };
 
 export const settingsSlice = createSlice({
