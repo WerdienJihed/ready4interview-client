@@ -8,10 +8,10 @@ const QuizResultBox = ({ quiz }) => {
     if (item.correct) {
       state = "correct";
     }
-    if (quiz.userAnswer.id === item.id && !item.correct) {
+    if (quiz.userAnswer._id === item._id && !item.correct) {
       state = "incorrect";
     }
-    return <QuizResultOption key={item.id} text={item.text} state={state} />;
+    return <QuizResultOption key={item._id} text={item.text} state={state} />;
   });
 
   return (

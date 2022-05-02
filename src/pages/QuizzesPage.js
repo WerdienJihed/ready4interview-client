@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import QuizzesWrapper from "../components/QuizzesWrapper";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";

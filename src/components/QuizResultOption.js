@@ -17,7 +17,7 @@ const QuizResultOption = ({ text, state }) => {
 
   return (
     <Col md={6}>
-      <Button variant={variant} className="w-100">
+      <Button variant={variant} className="w-100" disabled>
         {text}
       </Button>
     </Col>

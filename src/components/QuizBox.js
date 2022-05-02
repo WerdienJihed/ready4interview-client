@@ -3,8 +3,8 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 
 const QuizBox = ({ quiz, handleChangeQuiz }) => {
-  const handleClick = (quizOption) => {
-    handleChangeQuiz(quiz, quizOption);
+  const handleClick = (userAnswer) => {
+    handleChangeQuiz(quiz, userAnswer);
   };
 
   return (
@@ -14,7 +14,7 @@ const QuizBox = ({ quiz, handleChangeQuiz }) => {
         <Row className="gy-2">
           {quiz.answers.map((answer) => (
             <QuizOption
-              key={answer.id}
+              key={answer._id}
               handleClick={handleClick}
               quizOption={answer}
             />
