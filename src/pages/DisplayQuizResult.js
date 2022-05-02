@@ -16,15 +16,36 @@ const DisplayQuizResult = () => {
   };
 
   const quizzes = useSelector((state) => state.quizzesResult.value);
+
+  const numberOfCorrectAnswers = quizzes.reduce(
+    (acc, curr) => (curr.userAnswer.correct ? acc + 1 : acc),
+    0
+  );
+
+  const score = Math.round((numberOfCorrectAnswers / quizzes.length) * 100);
+
   return (
     <Container className="mt-5">
-      <Button variant="success" className="w-100 mb-5" onClick={handleTryAgain}>
-        Try again
-      </Button>
+      <div className="text-center">
+        <h2>Correct Answers : {numberOfCorrectAnswers}/20</h2>
+        <h2>Your score : {score}%</h2>
+        <Button
+          variant="outline-success"
+          size="lg"
+          className="my-3"
+          onClick={handleTryAgain}
+        >
+          Try again
+        </Button>
+      </div>
+      <hr />
+      <h1 className="text-center mb-5">Your Answers </h1>
       {quizzes.length === 0 ? (
         <Alert variant="danger">No Result to display</Alert>
       ) : (
-        quizzes.map((quiz) => <QuizResultBox key={quiz._id} quiz={quiz} />)
+        quizzes.map((quiz, index) => (
+          <QuizResultBox key={quiz._id} quiz={quiz} index={index} />
+        ))
       )}
     </Container>
   );
