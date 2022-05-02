@@ -4,64 +4,9 @@ import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 
 const QuizPage = () => {
-  // get state from redux store
+  const [quizzes, setQuizzes] = useState([]);
   const difficulty = "easy";
   const topic = "javascript";
-
-  const quizzes = [
-    {
-      id: 1,
-      question: "Question 1 ?",
-      answers: [
-        {
-          id: 1,
-          text: "A",
-          correct: true,
-        },
-        {
-          id: 2,
-          text: "B",
-          correct: false,
-        },
-        {
-          id: 3,
-          text: "C",
-          correct: false,
-        },
-        {
-          id: 4,
-          text: "D",
-          correct: false,
-        },
-      ],
-    },
-    {
-      id: 1,
-      question: "Question 2 ?",
-      answers: [
-        {
-          id: 1,
-          text: "AA",
-          correct: false,
-        },
-        {
-          id: 2,
-          text: "BB",
-          correct: true,
-        },
-        {
-          id: 3,
-          text: "CC",
-          correct: false,
-        },
-        {
-          id: 4,
-          text: "DD",
-          correct: false,
-        },
-      ],
-    },
-  ];
 
   return (
     <Container className="mt-4">

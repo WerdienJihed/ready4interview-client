@@ -8,9 +8,15 @@ const Navigation = () => {
     <Navbar bg="dark" variant="dark">
       <Container>
         <Navbar.Brand>Ready For Interview</Navbar.Brand>
-        <Nav className="mr-auto">
+        <Nav>
           <LinkContainer to="/settings">
             <Nav.Link>Settings</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/quiz">
+            <Nav.Link>Quiz</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/result">
+            <Nav.Link>Result</Nav.Link>
           </LinkContainer>
         </Nav>
       </Container>
