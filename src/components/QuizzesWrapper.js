@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import QuizBox from "../components/QuizBox";
 import Alert from "react-bootstrap/Alert";
@@ -24,6 +23,10 @@ const QuizzesWrapper = ({ quizzes, difficulty, topic }) => {
     }
   };
 
+  const handleCountdownCompleted = () => {
+    navigate("/result");
+  };
+
   return (
     <div>
       <div className="d-flex my-5">
@@ -33,7 +36,12 @@ const QuizzesWrapper = ({ quizzes, difficulty, topic }) => {
           <h6>Topic</h6> <p>{topic}</p>
         </Alert>
         <div className="w-100 d-flex justify-content-center mb-4">
-          <CountdownCircleTimer isPlaying duration={1200} colors="#F7B801">
+          <CountdownCircleTimer
+            isPlaying
+            duration={10}
+            colors="#F7B801"
+            onComplete={handleCountdownCompleted}
+          >
             {({ remainingTime }) => {
               const minutes = Math.floor(remainingTime / 60);
               const seconds = remainingTime % 60;
