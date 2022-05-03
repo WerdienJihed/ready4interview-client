@@ -2,27 +2,20 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import { add } from "../store/quizzesResultSlice";
 import QuizBox from "../components/QuizBox";
 import Alert from "react-bootstrap/Alert";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 const QuizzesWrapper = ({ quizzes, difficulty, topic }) => {
   const [quiz, setQuiz] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
     setQuiz(quizzes[currentIndex]);
   }, [quizzes, currentIndex]);
 
-  const handleChangeQuiz = (quiz, userAnswer) => {
-    let prevQuiz = { ...quiz, userAnswer };
-    dispatch(add(prevQuiz));
-
+  const handleChangeQuiz = () => {
     if (currentIndex === quizzes.length - 1) {
       navigate("/result");
     } else {
