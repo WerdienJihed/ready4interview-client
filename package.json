@@ -20,6 +20,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "backend": "cd ../backend && npm run dev",
+    "frontend": "cd ../frontend && npm start",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
