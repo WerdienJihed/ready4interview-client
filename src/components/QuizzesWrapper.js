@@ -38,7 +38,7 @@ const QuizzesWrapper = ({ quizzes, difficulty, topic }) => {
         <div className="w-100 d-flex justify-content-center mb-4">
           <CountdownCircleTimer
             isPlaying
-            duration={10}
+            duration={600}
             colors="#F7B801"
             onComplete={handleCountdownCompleted}
           >
