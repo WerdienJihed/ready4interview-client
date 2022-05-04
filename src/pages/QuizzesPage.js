@@ -5,6 +5,7 @@ import axios from "axios";
 import QuizzesWrapper from "../components/QuizzesWrapper";
 import Container from "react-bootstrap/Container";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 const QuizPage = () => {
   const [quizzes, setQuizzes] = useState([]);
   const { topic, difficulty } = useSelector((state) => state.settings.value);
@@ -13,7 +14,7 @@ const QuizPage = () => {
   useEffect(() => {
     const fetchQuizzes = async () => {
       const response = await axios.get(
-        `http://localhost:5000/api/random-quiz/20/?topic=${topic}&difficulty=${difficulty}`
+        `${BASE_URL}/api/random-quiz/20/?topic=${topic}&difficulty=${difficulty}`
       );
       setQuizzes(response.data);
       dispatch(initQuizzes(response.data));
