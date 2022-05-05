@@ -17,7 +17,7 @@ const QuizBox = ({ quiz, handleChangeQuiz }) => {
       <Card.Header className="text-center">{quiz.question}</Card.Header>
       <Card.Body>
         <Row className="gy-2">
-          {quiz.answers.map((option) => (
+          {quiz.options.map((option) => (
             <QuizOption
               key={option._id}
               handleClick={saveUserAnswer}

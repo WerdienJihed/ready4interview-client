@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Badge from "react-bootstrap/Badge";
 
 const QuizResultBox = ({ index, quiz, answer }) => {
-  const optionsArray = quiz.answers.map((option) => {
+  const optionsArray = quiz.options.map((option) => {
     if (!answer) {
       if (option.correct) {
         return (
