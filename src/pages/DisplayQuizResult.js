@@ -36,7 +36,7 @@ const DisplayQuizResult = () => {
         </h2>
         <h2>Your score : {score}%</h2>
         <Button
-          variant="outline-success"
+          variant="primary"
           size="lg"
           className="my-3"
           onClick={handleTryAgain}

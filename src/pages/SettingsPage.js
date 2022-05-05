@@ -33,7 +33,7 @@ const SettingsPage = () => {
 
   return (
     <Container className="d-flex justify-content-center mt-5">
-      <Card border="success" style={{ width: "18rem" }}>
+      <Card border="primary" style={{ width: "18rem" }}>
         <Card.Header>Settings</Card.Header>
         <Card.Body>
           <Form onSubmit={handleSubmit}>
@@ -60,7 +60,7 @@ const SettingsPage = () => {
                 <option value="hard">Hard</option>
               </Form.Select>
             </Form.Group>
-            <Button type="submit" variant="outline-success" className="w-100">
+            <Button type="submit" variant="primary" className="w-100">
               Start
             </Button>
           </Form>

@@ -23,7 +23,7 @@ const QuizPage = () => {
   }, [topic, difficulty]);
 
   return (
-    <Container className="mt-4">
+    <Container>
       {quizzes.length === 0 && <h1 className="text-center">No Items</h1>}
       {quizzes.length > 0 && (
         <QuizzesWrapper

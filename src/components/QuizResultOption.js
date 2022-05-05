@@ -11,7 +11,7 @@ const QuizResultOption = ({ text, state }) => {
       variant = "danger";
       break;
     default:
-      variant = "outline-secondary";
+      variant = "secondary";
       break;
   }
 

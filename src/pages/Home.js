@@ -12,23 +12,19 @@ function Home() {
           <h1>Ready For Interview</h1>
         </Col>
       </Row>
-      <Row className="mt-4">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-          architecto nam quasi animi aperiam culpa. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Asperiores beatae, porro natus
-          voluptatem ducimus nulla! Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Odio ipsa, praesentium aliquam voluptates modi
-          possimus.
-        </p>
+      <Row className="mt-4 justify-content-center">
+        <Col xs={10} md={8}>
+          <h5>
+            Ready for interview is an app that allows you to practice interview
+            questions and refine your skills to reach potential employers with
+            confidence.
+          </h5>
+        </Col>
       </Row>
       <Row className="mt-4">
         <Col>
-          <Button variant="secondary" className="me-2">
-            Sign up
-          </Button>
           <Button
-            variant="outline-success"
+            variant="primary"
             className="ms-2"
             onClick={() => navigate("/settings")}
           >

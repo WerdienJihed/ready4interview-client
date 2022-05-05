@@ -5,7 +5,7 @@ const QuizOption = ({ quizOption, handleClick }) => {
   return (
     <Col md={6}>
       <Button
-        variant="outline-success"
+        variant="light"
         className="w-100"
         onClick={() => handleClick(quizOption)}
       >
